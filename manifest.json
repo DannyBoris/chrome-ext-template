@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Feedbug",
+  "version": "1.0",
+  "description": "Add the reading time to Chrome Extension documentation articles",
+  "permissions": ["tabs"],
+  "icons": {
+    "16": "./bug.jpeg",
+    "32": "./bug.jpeg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["/dist/index.js"],
+      "matches": ["https://*/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/dist/index.html"],
+      "matches": ["https://*/*"]
+    }
+  ]
+}
